@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=yes" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<title></title>
+		<link rel="stylesheet" href="rester.css" />
+		<style type="text/css">
+			.mapBack {
+				width: 100%;
+				overflow: hidden;
+				margin-bottom:100px;
+			}
+			
+			.mapText {
+				width: 100%;
+				background: url(../img/siteMap.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.mapButton {
+				margin-top: 30px;
+			}
+			
+			.blueBtn button, .greenBtn button {
+				border: 1px solid #c3d7e2;
+				border-radius: 5px;
+			}
+			
+			.blueBtn button {
+				background: -webkit-gradient(linear, 0 0, 0 bottom, from(#e4f7fb), to(#c1edfc));
+			}
+			
+			.greenBtn button {
+				background: -webkit-gradient(linear, 0 0, 0 bottom, from(#e6f5dd), to(#d2e7ab));
+			}
+			
+			.buttonGroup {
+				width: 100%;
+			}
+			
+			.buttonGroup button:first-child {
+				margin-left: 0;
+			}
+			
+			.buttonGroup button:last-child {
+				margin-right: 0;
+			}
+			
+			svg {
+				height: 61px;
+			}
+			.body_center{
+				width:65%;
+				margin:0 auto;
+			}
+			@media (min-width:256px) and (max-width:319px) {
+				.blueBtn button, .greenBtn button {
+					font-size: 11px;
+					padding: 10px 0;
+					width: 17.2%;
+					margin: 0 0.5%;
+				}
+				.mapText {
+					height: 150px;
+				}
+				.mapTitle {
+					font-size: 2rem;
+					padding-top: 33px;
+				}
+				
+				.mapDetail {
+					font-size: 0.8 rem;
+					padding: 10px 0;
+				}
+				.Branch {
+					margin-top: 4rem;
+				}
+			}
+			@media (min-width:320px) and (max-width:413px){
+				.blueBtn button, .greenBtn button {
+					font-size:0.5rem;
+					padding:6px 0;
+					width: 18.6%;
+					margin: 0 0.2%;
+				}
+				.mapText {
+					height: 170px;
+				}
+				.mapTitle {
+					font-size: 2rem;
+					padding-top: 58px;
+				}
+				
+				.mapDetail {
+					font-size: 0.8remx;
+					padding: 10px 0;
+				}
+				.Branch {
+					margin-top: 5rem;
+				}
+			}
+			@media (min-width:414px) and (max-width:550px) {
+				.blueBtn button, .greenBtn button {
+					font-size: 0.8rem;
+					padding: 10px 0;
+					width: 16.8%;
+					margin: 0 1%;
+				}
+				.mapText {
+					height: 200px;
+				}
+				.mapTitle {
+					font-size: 2rem;
+			    	padding-top: 72px;
+				}
+				
+				.mapDetail {
+					font-size: 0.8rem;
+			    	padding: 10px 0;
+				}
+				.Branch {
+					margin-top: 5rem;
+				}
+			}
+			@media (min-width:551px) and (max-width:750px){
+				.blueBtn button, .greenBtn button {
+					font-size: 0.8rem;
+					padding: 12px 0;
+					width: 17.3%;
+					margin: 0 1%;
+				}
+				.mapText {
+					height: 220px;
+				}
+				.mapTitle {
+					font-size: 40px;
+					padding-top: 100px;
+				}
+				
+				.mapDetail {
+					font-size: 13px;
+					padding: 10px 0;
+				}
+				.Branch {
+					margin-top: 5rem;
+				}
+			}
+			@media (min-width:751px) and (max-width:850px){
+				.blueBtn button, .greenBtn button {
+					font-size: 11px;
+					padding: 12px 0;
+					width: 17.6%;
+					margin: 0 1%;
+				}
+				.mapText {
+					height: 230px;
+				}
+				.mapTitle {
+					font-size: 40px;
+					padding-top: 100px;
+				}
+				
+				.mapDetail {
+					font-size: 13px;
+					padding: 10px 0;
+				}
+				.Branch {
+					margin-top: 6rem;
+				}
+			}
+			@media (min-width:851px) and (max-width:1050px){
+				.blueBtn button, .greenBtn button {
+					font-size: 11px;
+					padding: 17px 0;
+					width: 16.9%;
+					margin: 0 1.5%;
+				}
+				.mapText {
+					height: 240px;
+				}
+				.mapTitle {
+					font-size: 40px;
+					padding-top: 100px;
+				}
+				
+				.mapDetail {
+					font-size: 13px;
+					padding: 10px 0;
+				}
+				.Branch {
+					margin-top: 7rem;
+				}
+			}
+			@media (min-width:1051px) and (max-width:1250px){
+				.blueBtn button, .greenBtn button {
+					font-size: 13px;
+					padding: 17px 0;
+					width: 16.2%;
+					margin: 0 2%;
+				}
+				.mapText {
+					height: 240px;
+				}
+				.mapTitle {
+					font-size: 40px;
+					padding-top: 100px;
+				}
+				
+				.mapDetail {
+					font-size: 13px;
+					padding: 10px 0;
+				}
+				.Branch {
+					margin-top: 8rem;
+				}
+			}
+			@media (min-width:1251px) and (max-width:1300px){
+				.blueBtn button, .greenBtn button {
+					font-size: 13px;
+					padding: 17px 0;
+					width: 16.3%;
+					margin: 0 2%;
+				}
+				.mapText {
+					height: 250px;
+				}
+				.mapTitle {
+					font-size: 40px;
+					padding-top: 100px;
+				}
+				
+				.mapDetail {
+					font-size: 13px;
+					padding: 10px 0;
+				}
+				.Branch {
+					margin-top: 8rem;
+				}
+			}
+			@media  (min-width:1301px) and (max-width:1500px) {
+				.blueBtn button, .greenBtn button {
+					font-size: 14px;
+					padding: 17px 0;
+					width: 16.3%;
+					margin: 0 2%;
+				}
+				.mapText {
+					height: 270px;
+				}
+				.mapTitle {
+					font-size: 40px;
+					padding-top: 100px;
+				}
+				
+				.mapDetail {
+					font-size: 13px;
+					padding: 10px 0;
+				}
+				.Branch {
+					margin-top:8rem;
+				}
+			}
+			@media  (min-width:1501px) and (max-width:1700px){
+				.blueBtn button, .greenBtn button {
+					font-size: 15px;
+					padding: 17px 0;
+					width: 16.4%;
+					margin: 0 2%;
+				}
+				.mapText {
+					height: 300px;
+				}
+				.mapTitle {
+					font-size: 40px;
+					padding-top: 100px;
+				}
+				
+				.mapDetail {
+					font-size: 13px;
+					padding: 10px 0;
+				}
+				.Branch {
+					margin-top: 8rem;
+				}
+			}
+			@media  (min-width:1701px) and (max-width:1920px){
+				.blueBtn button, .greenBtn button {
+					font-size: 15px;
+					padding: 17px 0;
+					width: 16.4%;
+					margin: 0 2%;
+				}
+				.mapText {
+					height: 300px;
+				}
+				.mapTitle {
+					font-size: 40px;
+					padding-top: 100px;
+				}
+				
+				.mapDetail {
+					font-size: 13px;
+					padding: 10px 0;
+				}
+				.Branch {
+					margin-top: 8rem;
+				}
+			}
+			@media (min-width:1921px){
+				.blueBtn button, .greenBtn button {
+					font-size: 15px;
+					padding: 17px 0;
+					width: 16.5%;
+					margin: 0 2%;
+				}
+				.mapText {
+					height: 300px;
+				}
+				.mapTitle {
+					font-size: 40px;
+					padding-top: 100px;
+				}
+				
+				.mapDetail {
+					font-size: 13px;
+					padding: 10px 0;
+				}
+				.Branch {
+					margin-top: 10rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid full">
+			<div class="mapBack">
+				<div class="body_center mapText">
+					<p class="mapTitle">Site map</p>
+					<p class="mapDetail">Better Global Cryptocurrency Site | Bitcoin News,Price,Information & Analysis</p>
+				</div>
+				<div class="body_center mapButton">
+					<div class="buttonGroup blueBtn">
+						<button>Soonbit</button>
+						<button class="fr">Login</button>
+						<button class="fr">Register</button>
+					</div>
+					<svg class="buttonGroup">
+					    <line x1="8%" y1="0" x2="8%" y2="60" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+					    <line x1="8%" y1="30" x2="91.5%" y2="30" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+					    <line x1="28.75%" y1="30" x2="28.75%" y2="60" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+					    <line x1="50%" y1="30" x2="50%" y2="60" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+					    <line x1="70.5%" y1="30" x2="70.5%" y2="60" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+					    <line x1="91.5%" y1="30" x2="91.5%" y2="60" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+					</svg>
+					<div class="buttonGroup blueBtn">
+						<button>Home</button>
+						<button>Exchange</button>
+						<button>News</button>
+						<button>Blockchain</button>
+						<button>Education</button>
+					</div>
+					<svg class="buttonGroup">
+					    <line x1="8%" y1="30" x2="8%" y2="60" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+					    <line x1="8%" y1="30" x2="91.5%" y2="30" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+					    <line x1="28.75%" y1="30" x2="28.75%" y2="60" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+					    <line x1="50%" y1="30" x2="50%" y2="60" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+					    <line x1="70.5%" y1="30" x2="70.5%" y2="60" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+					    <line x1="91.5%" y1="0" x2="91.5%" y2="60" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+					</svg>
+					<div class="buttonGroup greenBtn">
+						<button>Getting Started</button>
+						<button>Wallet</button>
+						<button>Mining</button>
+						<button>Trading</button>
+						<button>Books</button>
+					</div>
+					<div class="buttonGroup blueBtn Branch">
+						<button>Getting Started</button>
+						<button>Wallet</button>
+						<button>Mining</button>
+						<button>Trading</button>
+						<button>Books</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
